@@ -1,0 +1,4 @@
+{
+    "kernel": "OUT(^welcome to PyComp OS^)\nVAR program\nREAD count_ten\nMOV program REG:-1\nEXEC program\nEND\n",
+    "count_ten": "OUT(^This program counts by 1 from 0 to 10 and then stops^)\nVAR counter (0)\nout(^counter:^)\nLABEL count_to_ten\nADD [counter] (1)\nMOV counter REG:-1\nout(^counter:^)\nout(counter)\nCMP [counter] (10)\nJE <ending>\nJMP <count_to_ten>\nLABEL ending\nEND\n"
+}

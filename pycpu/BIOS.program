@@ -1,0 +1,30 @@
+OUT(^welcome to PyComp BIOS^)
+OUT(^Do you want to boot from disk[0] or install a new OS[1]^)
+OUT(^Current files on disk:^)
+#OUT(^Do you want to BOOT from Disk[0] or USB[1]?^)
+LS
+VAR dirs
+MOV dirs REG:-1
+OUT(dirs)
+IN
+VAR input
+MOV input REG:-1
+CMP [input] (0)
+JE <boot_disk>
+JNE <install_os>
+LABEL boot_disk
+OUT(^booting from disk...^)
+VAR program
+READ kernel
+MOV program REG:-1
+EXEC program
+JMP <ending>
+LABEL install_os
+OUT(^installing new OS...^)
+JMP <boot_disk>
+LABEL ending
+END
+
+
+
+

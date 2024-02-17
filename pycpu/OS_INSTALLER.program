@@ -1,0 +1,15 @@
+out(^welcome to PyComp OS Installer^)
+out("This program counts by 1 from 0 to 10 and then stops")
+VAR counter (0)
+out(^counter:^)
+LABEL count_to_ten
+ADD [counter] (1)
+MOV counter REG:-1
+out(^counter:^)
+out(counter)
+CMP [counter] (10)
+JE <ending>
+JMP <count_to_ten>
+LABEL ending
+END
+
